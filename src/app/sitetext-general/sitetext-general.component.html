@@ -1,0 +1,50 @@
+<form [formGroup]="plainTextForm" (ngSubmit)="translate()">    
+  <div class="row">
+    <div class="col">
+      <label for="key">Key</label>
+      <input type="text" class="form-control" id="key" formControlName="key" placeholder="sitetext key">
+    </div>
+    <div class="col">
+      <label for="Page">Page</label>
+      <input type="text" class="form-control" id="page" formControlName="page" placeholder="page name">
+    </div>    
+  </div>
+  <div class="row">
+    <div class="col">
+    <label for="text">Value</label>
+    <textarea class="form-control" id="text" formControlName="text" rows="1"></textarea>
+  </div>
+  </div>
+    <div class="row">
+      <div class="col-3" *ngFor="let order of languagesFormArray.controls; let i = index">
+        <label formArrayName="languages" title="{{languages[i].name}}">
+    <input type="checkbox" [formControlName]="i" >
+    {{languages[i].locale}}
+  </label>
+      </div>
+      <div *ngIf="languages.invalid && (languages.dirty || languages.touched)"
+              class="alert alert-danger">
+
+            <div *ngIf="languages.errors.minSelection">
+              At least one language must be selected.
+            </div>
+          </div>
+    </div>  
+  <button [disabled]="!plainTextForm.valid" type="submit" class="btn btn-primary btn-block btn-lg">Translate</button>
+</form>
+<div *ngIf="error" class="alert alert-danger" role="alert">
+  {{error}}
+</div>
+<div class="bd-clipboard">
+  <button class="btn-clipboard" title="" data-original-title="Copy to clipboard" 
+    [translateClipboard]="[query]"
+    (clipboardCopy)="logSuccess($event)"
+    (clipboardError)="logError($event)">Copy</button>
+</div>
+<figure class="highlight">
+  <pre>
+      <code #script>
+          {{query}}
+      </code>
+  </pre>
+</figure>

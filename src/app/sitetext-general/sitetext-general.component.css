@@ -1,0 +1,62 @@
+.bd-clipboard {
+    position: relative;    
+    float: right;
+    top:1rem;
+}
+.btn-clipboard {
+
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    z-index: 10;
+    display: block;
+    padding: .25rem .5rem;
+    font-size: 75%;
+    color: #818a91;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    border-radius: .25rem;
+
+}
+.btn-clipboard:hover {
+
+    color: #fff;
+    background-color: #027de7;
+
+}
+.bd-content .highlight {
+
+    margin-right: 0;
+    margin-left: 0;
+
+}
+.bd-content .highlight {
+
+    margin-right: -15px;
+    margin-left: -15px;
+
+}
+.highlight {
+    margin-top: 5px;
+    padding: 1.5rem;
+}
+.highlight {
+
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: #f8f9fa;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+
+}
+figure {
+
+    margin: 0 0 1rem;
+
+}
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+
+    display: block;
+
+}
